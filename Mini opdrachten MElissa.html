@@ -1,0 +1,341 @@
+<style>
+
+</style>
+
+<script>
+/*
+1.
+Maak een tekst-invoerveld. Maak een knop.
+In dat invoerveld kan ik als gebruiker iets intypen.
+Als ik hallo intyp en dan op de knop klik komt er een alert met Welkom
+Als ik doei intyp en dan op de knop klik komt er een alert met Tot de volgende keer.
+https://www.w3schools.com/tags/att_input_type_text.asp
+In andere gevallen gebeurd er niks.
+*/
+var woord;
+function functie1(){
+    // Maak tekst in veld een variabele 'woord'
+    woord = document.getElementById("invoerveld").value;
+    console.log(woord);
+    functie2()
+}
+
+function functie2() {
+    if(woord == "hallo"){
+        alert("Welkom")
+    }
+    else if(woord == "doei"){
+        alert("Tot de volgende keer") 
+    }
+
+}
+
+</script>
+
+<h1>Kleine opdrachten</h1>
+<br>
+<h2>Mini Opdracht 1</h2>
+
+<input type="text" id="invoerveld">
+<input type = "button" id="knop" onclick="functie1()" value = "Klik hier">
+
+
+<script>
+
+/*
+2
+Maak een tekst-invoerveld. Maak een knop.
+In dat invoerveld kan ik als gebruiker iets intypen. 
+Dat eerste veld gebruik ik om een woord in te typen. 
+Als ik op de knop klik, krijg ik een alert als er de letter e in zit.
+Zit er geen letter e in, dan gebeurd er niks. https://www.w3schools.com/js/js_string_methods.asp
+*/
+
+var woord2;
+function functie21(){
+    // Maak tekst in veld een variabele 'woord2'
+    woord2 = document.getElementById("invoerveld2").value;
+    console.log(woord2);
+    functie22()
+}
+
+function functie22(){
+    var zoekE = woord2.search(/e/i);
+    console.log(zoekE);
+    if (zoekE > -1) {
+        alert("Er zit een letter E in");
+    }
+}
+
+</script>
+<h2>Mini Opdracht 2</h2>
+<input type="text" id="invoerveld2">
+<input type = "button" id="knop2" onclick="functie21()" value = "Klik hier">
+
+<script>
+/*
+3.
+Maak een tekst-invoerveld.
+Maak nog een tekst-invoerveld.
+Maak een knop.
+In dat invoerveld kan ik als gebruiker iets intypen. 
+Dat eerste veld gebruik ik om een woord in te typen.
+Als ik op de knop klik, krijg ik een alert met hoe vaak de letter e er in zit.
+Zit er geen letter e in, dan gebeurd er niks.
+ADVANCED: in het tweede veld kan ik bepalen, van welke letter ik wil weten of die erin zit en hoe vaak.
+https://www.w3schools.com/js/js_string_methods.asp
+*/
+var woord3;
+function functie31(){
+    // Maak tekst in veld een variabele 'woord3'
+    woord3 = document.getElementById("invoerveld31").value;
+    letter32 = document.getElementById("invoerveld32").value;
+    console.log(woord3);
+    console.log(letter32);
+    functie32()
+}
+
+function functie32(){
+    // zoekt letter e in woord3 en telt het aantal op
+    var x = woord3.length;
+    var sum = 0;
+    for (var i = 0 ; i < x ; i++){
+        if(letter32 == 0) {
+            if(woord3.charAt(i) == "e"){ 
+            sum++;
+            } 
+        } else {
+            if(woord3.charAt(i) == letter32){ 
+            sum++;
+            } 
+        }
+    }
+    console.log(sum);
+
+    if (sum > 0) {
+        alert("aantal letters: "+ sum); 
+    }  
+}
+
+</script>
+
+<h2>Mini Opdracht 3</h2>
+<input type="text" id="invoerveld31", value = "woord">
+<input type="text" id="invoerveld32", value = "letter">
+<input type = "button" id="knop3" onclick="functie31()" value = "Klik hier">
+
+<script>
+
+/*
+4.
+Maak 4 knoppen naast elkaar.
+Op de ene knop staat A, de andere B, die daarnaast C en die daarnaast D.
+ 
+Op het moment dat je op knop C van de knoppen klikt verschijnt er in een div.
+U heeft op knop C geklikt.
+ 
+Op het moment dat je op knop D klikt verschijnt er in een div.
+U heeft op knop C geklikt.
+U heeft op knop D geklikt.
+ 
+Hij houd dus jouw knop-klik history bij
+*/
+function functie41(){
+}
+function functie42(){
+}
+
+function functie43(){
+    document.getElementById("div4").innerHTML +=  "<br>" +"U heeft op knop C geklikt"
+    console.log("C is geklikt");
+
+}
+function functie44(){
+    document.getElementById("div4").innerHTML +=  "<br>" +"U heeft op knop D geklikt"
+    console.log("D is geklikt");
+}
+
+</script>
+
+<h2>Mini Opdracht 4</h2>
+<input type = "button" id="knop41" onclick="functie41()" value = "A">
+<input type = "button" id="knop42" onclick="functie42()" value = "B">
+<input type = "button" id="knop43" onclick="functie43()" value = "C">
+<input type = "button" id="knop44" onclick="functie44()" value = "D">
+
+<div id="div4"></div>
+
+
+<script>
+/*
+5.
+Onderschat deze opdracht niet
+ 
+Maak 4 knoppen naast elkaar.
+Op de ene knop staat A, de andere B, die daarnaast C en die daarnaast D.
+ 
+Op het moment dat je op knop C van de knoppen klikt verschijnt er in een div.
+U heeft op knop C geklikt.
+ 
+Op het moment dat je op knop D klikt verschijnt er in een div.
+U heeft op knop C geklikt.
+U heeft op knop D geklikt.
+ 
+Hij houd dus jouw knop-klik history bij.
+Maar als je hierna op C klikt;
+Verschijnt er een alert: U heeft al een keer op C geklikt.
+en verschijnt er in een div.
+U heeft op knop C geklikt.
+U heeft op knop D geklikt.
+U heeft op knop C geklikt.
+ 
+ADVANCED: De alert vertelt je hoe vaak je al op C had geklikt.
+LET OP: Als je de browser refreshed is alles weer leeg.
+*/
+
+function functie51(){
+    document.getElementById("div5").innerHTML
+    console.log("A is geklikt")
+}
+function functie52(){
+    document.getElementById("div5").innerHTML
+    console.log("B is geklikt")
+}
+var countC = 0;
+function functie53(){
+    countC++
+    document.getElementById("div5").innerHTML +=  "<br>" +"U heeft op knop C geklikt"
+    console.log("C is geklikt");
+    console.log(countC);
+    if(countC >1){
+        alert("U heeft al "+ countC+ " keer op C geklikt!")
+    }
+}
+function functie54(){
+    document.getElementById("div5").innerHTML +=  "<br>" +"U heeft op knop D geklikt"
+    console.log("D is geklikt");
+}
+
+</script>
+
+<h2>Mini Opdracht 5</h2>
+<input type = "button" id="knop51" onclick="functie51()" value = "A">
+<input type = "button" id="knop52" onclick="functie52()" value = "B">
+<input type = "button" id="knop53" onclick="functie53()" value = "C">
+<input type = "button" id="knop54" onclick="functie54()" value = "D">
+
+<div id="div5"></div>
+
+</script>
+
+<script>
+/*
+6.
+Maak een afbeelding zichtbaar in je scherm.
+Maak een knop.
+ 
+Als ik op de knop klik, verandert de afbeelding naar een nieuwe afbeelding.
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb
+ 
+ADVANCED: Klik door vier seizoenen heen. Plaatje van de Zomer, Herfst, Winter, Lente. Na iedere winter is er 1 jaar voorbij. In de div staat na 13 keer klikken. Er zijn 3 jaren voorbij.
+<button onclick="document.getElementById('myImage').src='earth.gif'">Turn on the light</button>
+*/
+</script>
+<h2>Mini Opdracht 6a</h2>
+<html>
+<body>
+<p>This is the earth.</p>
+<p>If you press the button it changes into Mars by changing the value of the src (source) attribute of an image.</p>
+<img id="myImage" src="earth.gif" style="width:200px">
+<button onclick="document.getElementById('myImage').src='mars.gif'">Go to Mars</button>
+</body>
+</html>
+
+<h2>Mini Opdracht 6b</h2>
+<script> 
+var teller = 1
+var seasons = 0
+function seasonChange(){
+    x = teller++
+    seasons++
+    if(seasons ==1){
+        document.getElementById("mySeason").src="autumn.gif"
+    }else if (seasons ==2){
+        document.getElementById("mySeason").src="winter.gif"
+    }else if (seasons ==3){
+        document.getElementById("mySeason").src="spring.gif"
+    }else if (seasons ==4){
+        document.getElementById("mySeason").src="summer.gif"
+        seasons = 1;
+    }   
+
+    console.log("aantal kliks = " + x)
+    if(x ==13){
+        document.getElementById("div6").innerHTML +=  "<br>" +"Er zijn 3 jaren voorbij"
+    }
+}
+</script>
+<html>
+<body>
+<b>These are the 4 seasons.</b>
+<p><i>If you press the button it changes the season.</i></p>
+<img id="mySeason" src="summer.gif" style="width:200px">
+<input type = "button" id="mySeason" onclick="seasonChange()" value = "Next season">
+<div id="div6"></div>
+</body>
+</html>
+<script>
+/*
+7. 
+
+Maak 2 afbeeldingen zichtbaar in je scherm. AFBA en AFBB
+Maak 3 knoppen. KNA KNB KNC
+ 
+KNA klik je op om AFBA door de seizoenen-afbeeldingen heen te doen.
+KNB klik je op om AFBB door de seizoenen-afbeeldingen heen te doen.
+ 
+Op KNC klik je EN
+- als dezelfde afbeeldingen op beide plekken staan console log je (HETZELFDE)
+- als verschillende afbeeldingen op beide plekken staan console log je (NIET HETZELFDE)
+*/
+</script>
+<h2>Mini Opdracht 7</h2>
+
+
+<script>
+/*
+8.
+Maak 2 afbeeldingen. AFBA en AFBB
+Op het moment dat je op AFBA klikt gaat hij een seizoen verder.
+Op het moment dat AFBA op de lente komt, verschijnt er bij AFBB een foto met lammetjes.
+Als AFBA weer van de lente afgaat, verdwijnt of verandert AFBB naar een andere foto.
+Totdat je weer op lente komt.
+etc.
+*/
+</script>
+<h2>Mini Opdracht 8</h2>
+
+<script>
+/*
+9.
+Verzin een goede en duidelijk omschreven miniopdracht. Deel deze omschrijving in de groepsapp. 
+Programmeer je eigen miniopdracht, maar hou deze oplossing voor jezelf.
+*/
+</script>
+<h2>Mini Opdracht 9</h2>
+
+
+<script>
+/*
+10.
+Programmeer een miniopdracht 9 van een ander.
+Stuur jouw oplossing naar die ander.
+ 
+ADVANCED Geef feedback op oplossingen die op jouw opdracht aan je zijn ingeleverd
+*/
+</script>
+
+<h2>Mini Opdracht 10</h2>
+
+
+
