@@ -253,10 +253,10 @@ ADVANCED: Klik door vier seizoenen heen. Plaatje van de Zomer, Herfst, Winter, L
 
 <h2>Mini Opdracht 6b</h2>
 <script> 
-var teller = 1
+var teller6 = 1
 var seasons = 0
 function seasonChange(){
-    x = teller++
+    teller6++
     seasons++
     if(seasons ==1){
         document.getElementById("mySeason").src="autumn.gif"
@@ -269,8 +269,8 @@ function seasonChange(){
         seasons = 1;
     }   
 
-    console.log("aantal kliks = " + x)
-    if(x ==13){
+    console.log("aantal kliks = " + teller6)
+    if(teller6 ==13){
         document.getElementById("div6").innerHTML +=  "<br>" +"Er zijn 3 jaren voorbij"
     }
 }
@@ -298,9 +298,59 @@ Op KNC klik je EN
 - als dezelfde afbeeldingen op beide plekken staan console log je (HETZELFDE)
 - als verschillende afbeeldingen op beide plekken staan console log je (NIET HETZELFDE)
 */
+var seasons7A = 0
+function seasonChange7A(){
+    seasons7A++
+    console.log(seasons7A)
+    if(seasons7A ==1){
+        document.getElementById("AFBA").src="autumn.gif"
+    }else if (seasons7A ==2){
+        document.getElementById("AFBA").src="winter.gif"
+    }else if (seasons7A ==3){
+        document.getElementById("AFBA").src="spring.gif"
+    }else if (seasons7A ==4){
+        document.getElementById("AFBA").src="summer.gif"
+        seasons7A = 0;
+    }   
+}
+var seasons7B = 0
+function seasonChange7B(){
+    seasons7B++
+    console.log(seasons7B)
+    if(seasons7B ==1){
+        document.getElementById("AFBB").src="autumn.gif"
+    }else if (seasons7B ==2){
+        document.getElementById("AFBB").src="winter.gif"
+    }else if (seasons7B ==3){
+        document.getElementById("AFBB").src="spring.gif"
+    }else if (seasons7B ==4){
+        document.getElementById("AFBB").src="summer.gif"
+        seasons7B = 0;
+    }
+}   
+
+function checkSeason7(){
+     if(seasons7A == seasons7B){
+        console.log("HETZELFDE")
+    }else{
+        console.log("NIET HETZELFDE")
+    }
+}
+
+
 </script>
 <h2>Mini Opdracht 7</h2>
+<html>
+<body>
+<img id="AFBA" src="summer.gif" style="width:200px">
+<img id="AFBB" src="summer.gif" style="width:200px">
 
+<input type = "button" id="KNA" onclick="seasonChange7A()" value = "KNA">
+<input type = "button" id="KNB" onclick="seasonChange7B()" value = "KNB">
+<input type = "button" id="KNC" onclick="checkSeason7()" value = "KNC">
+
+</body>
+</html>
 
 <script>
 /*
@@ -312,17 +362,43 @@ Als AFBA weer van de lente afgaat, verdwijnt of verandert AFBB naar een andere f
 Totdat je weer op lente komt.
 etc.
 */
+var seasons8A = 0
+function seasonChange8A(){
+    seasons8A++
+    console.log(seasons8A)
+    if(seasons8A ==1){
+        document.getElementById("AFBA8").src="autumn.gif"
+    }else if (seasons8A ==2){
+        document.getElementById("AFBA8").src="winter.gif"
+    }else if (seasons8A ==3){
+        document.getElementById("AFBA8").src="spring.gif"
+        document.getElementById("AFBB8").src="lam.gif"
+    }else if (seasons8A ==4){
+        document.getElementById("AFBA8").src="summer.gif"
+        document.getElementById("AFBB8").src="schaap.gif"
+        seasons8A = 0;
+    }   
+}
+ 
 </script>
 <h2>Mini Opdracht 8</h2>
+<html>
+<body>
+<img id="AFBA8" src="summer.gif" style="width:200px" onclick="seasonChange8A()">
+<img id="AFBB8" src="schaap.gif" style="width:200px"onclick="seasonChange8B()">
+
+</body>
+</html>
 
 <script>
 /*
+
 9.
 Verzin een goede en duidelijk omschreven miniopdracht. Deel deze omschrijving in de groepsapp. 
 Programmeer je eigen miniopdracht, maar hou deze oplossing voor jezelf.
 */
 </script>
-<h2>Mini Opdracht 9</h2>
+<h2>Mini Opdracht 9 NVT</h2>
 
 
 <script>
@@ -335,7 +411,7 @@ ADVANCED Geef feedback op oplossingen die op jouw opdracht aan je zijn ingelever
 */
 </script>
 
-<h2>Mini Opdracht 10</h2>
+<h2>Mini Opdracht 10 NVT</h2>
 
 
 
